@@ -1,3 +1,3 @@
 mkdir -p data
 yarn db:migrate
-node build
+node build/server.js
