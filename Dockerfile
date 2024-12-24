@@ -2,7 +2,7 @@ FROM node:alpine
 
 WORKDIR /app
 COPY package.json ./
-RUN yarn install
+RUN yarn install && rm -rf /usr/local/share/.cache
 
 COPY . .
 RUN yarn build
