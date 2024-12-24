@@ -7,6 +7,6 @@ RUN yarn install
 COPY . .
 RUN yarn build
 
-CMD ["bash", "start.sh"]
+ENTRYPOINT ["/bin/sh", "start.sh"]
 
 EXPOSE 3000
