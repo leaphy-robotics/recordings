@@ -4,9 +4,4 @@ import socketVitePlugin from './socketVitePlugin';
 
 export default defineConfig({
 	plugins: [sveltekit(), socketVitePlugin],
-	build: {
-		rollupOptions: {
-			external: ['bun:sqlite']
-		}
-	}
 });
