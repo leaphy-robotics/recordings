@@ -1,0 +1,56 @@
+:root {
+	--background: rgb(255, 255, 255);
+	--robot: #fff;
+	--on-background: #000;
+	--background-tint: #f1f1f1;
+	--primary: #06778f;
+	--primary-dark-tint: #035e72;
+	--on-primary: #fff;
+	--secondary: lightgray;
+	--on-secondary: black;
+	--on-secondary-muted: rgb(109, 109, 109);
+	--accent: #32a5a9;
+	--on-accent: #fff;
+	--text-muted: #d3d3d3;
+	--warning: #ffcc00;
+}
+
+body {
+	margin: 0;
+	background: var(--background);
+	color: var(--on-background);
+
+	font-family: sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.rr-player {
+	box-shadow: unset !important;
+}
+
+.rr-progress {
+	background: var(--secondary) !important;
+}
+
+.rr-progress__step {
+	background: var(--primary) !important;
+}
+
+.rr-progress__handler {
+	background: var(--accent) !important;
+}
+
+.rr-controller__btns .active {
+	background: var(--accent) !important;
+}
+
+.switch label:before {
+	background: var(--accent) !important;
+}
+
+* {
+	margin: 0;
+}
