@@ -1,9 +1,7 @@
-import { JwksClient } from 'jwks-rsa';
-import { AUTH0_CLIENT_ID, AUTH0_ISSUER, ORIGIN } from '$env/static/private';
-import { randomBytes } from 'crypto';
-import { redirect } from '@sveltejs/kit';
+import { env } from '$env/dynamic/private';
 import { importJWK, type KeyLike } from 'jose';
 
+const { AUTH0_CLIENT_ID, AUTH0_ISSUER, ORIGIN } = env;
 let CACHE_KEY: KeyLike | Uint8Array | null = null;
 
 export async function getKey() {

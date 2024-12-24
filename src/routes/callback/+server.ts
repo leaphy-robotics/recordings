@@ -1,6 +1,7 @@
 import type { RequestHandler } from './$types';
-import { AUTH0_CLIENT_ID, AUTH0_CLIENT_SECRET, AUTH0_ISSUER, ORIGIN } from '$env/static/private';
-import { redirect } from '@sveltejs/kit';
+import { env } from '$env/dynamic/private';
+
+const { AUTH0_CLIENT_ID, AUTH0_CLIENT_SECRET, AUTH0_ISSUER, ORIGIN } = env;
 
 export const GET: RequestHandler = async ({ url, cookies }) => {
 	const code = url.searchParams.get('code');
