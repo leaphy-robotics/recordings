@@ -10,7 +10,7 @@
 		onclick?: () => void;
 		context?: Snippet<[Writable<boolean>]>;
 		disabled?: boolean;
-		mode: 'primary' | 'secondary' | 'outlined' | 'accent' | 'tint';
+		mode: 'primary' | 'secondary' | 'outlined' | 'accent' | 'tint' | 'warning';
 		bold?: boolean;
 		type?: 'button' | 'submit';
 		inline?: boolean;
@@ -57,6 +57,7 @@
 	class:outlined={mode === 'outlined'}
 	class:accent={mode === 'accent'}
 	class:tint={mode === 'tint'}
+	class:warning={mode === 'warning'}
 	class:bold
 	class:inline
 	class:center
@@ -120,6 +121,11 @@
 	.tint {
 		background: var(--background-tint);
 		color: var(--on-background);
+	}
+
+	.warning {
+		border: 1px solid var(--on-background);
+		color: var(--danger);
 	}
 
 	.bold {

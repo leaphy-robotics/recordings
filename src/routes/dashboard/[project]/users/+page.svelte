@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import Button from '$lib/components/ui/Button.svelte';
 	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
-	import { faUser } from '@fortawesome/free-solid-svg-icons';
+	import { faUser, faTrash } from '@fortawesome/free-solid-svg-icons';
 	import CreateUser from '$lib/components/CreateUser.svelte';
 
 	const { data } = $props();
@@ -35,15 +35,17 @@
 			<div class="empty">No users found</div>
 		{/if}
 		{#each data.users as user (user.id)}
-			<a href="/dashboard/{data.projectID}/users/{user.id}" class="user">
-				<div class="icon">
-					<FontAwesomeIcon icon={faUser} />
-				</div>
-				{user.name}
-			</a>
-			<form method="post" action="/dashboard/{data.projectID}/users/{user.id}/?/delete">
-				<Button type="submit" name="Delete user" mode="primary" />
-			</form>
+			<div class="user">
+				<a href="/dashboard/{data.projectID}/users/{user.id}" class="user">
+					<div class="icon">
+						<FontAwesomeIcon icon={faUser} />
+					</div>
+					{user.name}
+				</a>
+				<form method="post" action="/dashboard/{data.projectID}/users/{user.id}/?/delete">
+					<Button icon={faTrash} type="submit" mode="warning" />
+				</form>
+			</div>
 		{/each}
 	</div>
 </div>
@@ -85,5 +87,6 @@
 		padding: 10px;
 		text-decoration: none;
 		color: var(--on-background);
+		justify-content: space-between;
 	}
 </style>
