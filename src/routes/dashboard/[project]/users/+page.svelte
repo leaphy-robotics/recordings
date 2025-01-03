@@ -41,6 +41,9 @@
 				</div>
 				{user.name}
 			</a>
+			<form method="post" action="/dashboard/{data.projectID}/users/{user.id}/?/delete">
+				<Button type="submit" name="Delete user" mode="primary" />
+			</form>
 		{/each}
 	</div>
 </div>
