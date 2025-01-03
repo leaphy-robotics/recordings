@@ -19,11 +19,11 @@ export const load: PageServerLoad = async ({ params }) => {
 };
 
 export const actions: Actions = {
-	async delete({ params, request, locals }){
+	async delete({ params, request, locals }) {
 		const user = await locals.getUser();
 		if (!user) throw redirect(302, '/dashboard');
 
 		await db.delete(participantTable).where(eq(participantTable.id, params.user));
-		redirect(302, "/dashboard/" + params.project + "/users");
+		redirect(302, '/dashboard/' + params.project + '/users');
 	}
 };
