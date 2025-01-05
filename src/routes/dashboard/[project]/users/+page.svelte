@@ -42,7 +42,8 @@
 					</div>
 					{user.name}
 				</a>
-				<form method="post" action="/dashboard/{data.projectID}/users/{user.id}/?/delete">
+				<form method="post" action="?/delete">
+					<input type="hidden" name="user" value={user.id} />
 					<Button icon={faTrash} type="submit" mode="warning" />
 				</form>
 			</div>
