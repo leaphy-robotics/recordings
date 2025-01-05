@@ -124,7 +124,6 @@
 	}
 
 	.warning {
-		border: 1px solid var(--on-background);
 		color: var(--danger);
 	}
 

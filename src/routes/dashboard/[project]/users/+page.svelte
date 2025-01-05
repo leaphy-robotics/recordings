@@ -36,7 +36,7 @@
 		{/if}
 		{#each data.users as user (user.id)}
 			<div class="user">
-				<a href="/dashboard/{data.projectID}/users/{user.id}" class="user">
+				<a href="/dashboard/{data.projectID}/users/{user.id}" class="userlink">
 					<div class="icon">
 						<FontAwesomeIcon icon={faUser} />
 					</div>
@@ -81,13 +81,19 @@
 
 	.user {
 		display: flex;
-		align-items: center;
-		gap: 15px;
 		background: var(--secondary);
 		border-radius: 10px;
+		padding: 2px;
+		color: var(--on-background);
+	}
+
+	.userlink {
+		display: flex;
+		gap: 15px;
+		background: var(--secondary);
 		padding: 10px;
 		text-decoration: none;
 		color: var(--on-background);
-		justify-content: space-between;
+		flex: 1;
 	}
 </style>
