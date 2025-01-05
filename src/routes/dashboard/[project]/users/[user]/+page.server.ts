@@ -24,7 +24,6 @@ export const actions: Actions = {
 		if (!user) throw redirect(302, '/dashboard');
 
 		await db.delete(participantTable).where(eq(participantTable.id, params.user));
-		await db.delete(recordingTable).where(eq(recordingTable.participant, params.user));
 		redirect(302, '/dashboard/' + params.project + '/users');
 	}
 };

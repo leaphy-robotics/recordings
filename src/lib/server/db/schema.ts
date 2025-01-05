@@ -25,7 +25,7 @@ export const recordingTable = sqliteTable('recording', {
 	id: text('id').notNull(),
 	participant: text('participant')
 		.notNull()
-		.references(() => participantTable.id),
+		.references(() => participantTable.id, { onDelete: 'cascade' }),
 	date: integer('date', { mode: 'timestamp' }).notNull(),
 	recording: text('recording').notNull()
 });
